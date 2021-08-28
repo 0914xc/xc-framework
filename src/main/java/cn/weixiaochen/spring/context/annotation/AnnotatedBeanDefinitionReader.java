@@ -13,7 +13,6 @@ public class AnnotatedBeanDefinitionReader {
 
     private final BeanNameGenerator beanNameGenerator = AnnotationBeanNameGenerator.INSTANCE;
 
-
     public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry) {
         this.registry = registry;
     }

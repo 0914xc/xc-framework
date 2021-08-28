@@ -13,7 +13,11 @@ import java.util.Map;
  */
 public abstract class AbstractApplicationContext implements ApplicationContext, BeanDefinitionRegistry {
 
-    private DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+    private final DefaultListableBeanFactory beanFactory;
+
+    public AbstractApplicationContext() {
+        this.beanFactory = new DefaultListableBeanFactory();
+    }
 
     public void refresh() {
 

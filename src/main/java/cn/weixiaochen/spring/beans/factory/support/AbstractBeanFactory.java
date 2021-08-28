@@ -1,7 +1,6 @@
 package cn.weixiaochen.spring.beans.factory.support;
 
 import cn.weixiaochen.spring.beans.factory.BeanFactory;
-import cn.weixiaochen.spring.beans.factory.ListableBeanFactory;
 import cn.weixiaochen.spring.beans.factory.config.BeanDefinition;
 import cn.weixiaochen.spring.beans.BeansException;
 
