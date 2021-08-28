@@ -1,6 +1,6 @@
-# Xc-Spring - My Handwritten Framework
+# XcSpring - My Handwritten Framework
 
-![](https://img.shields.io/badge/License-GUN-green.svg)
+![](https://img.shields.io/badge/License-GPL3.0-green.svg)
 ![](https://img.shields.io/badge/Language-Java-orange.svg)
 ![](https://img.shields.io/badge/Author-WeiXiaochen-blue.svg)
 ![](https://img.shields.io/badge/Version-1.0.0-red.svg)
