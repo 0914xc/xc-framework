@@ -5,4 +5,4 @@
 ![](https://img.shields.io/badge/Author-WeiXiaochen-blue.svg)
 ![](https://img.shields.io/badge/Version-1.0.0-red.svg)
 
-The handwritten IoC and AOP framework, in order to lear [Spring-Framework](https://github.com/spring-projects/spring-framework)
+The handwritten IoC and AOP framework, in order to learn [Spring-Framework](https://github.com/spring-projects/spring-framework)
