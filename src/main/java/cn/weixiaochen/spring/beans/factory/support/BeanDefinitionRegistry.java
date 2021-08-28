@@ -7,6 +7,8 @@ import cn.weixiaochen.spring.beans.factory.config.BeanDefinition;
  */
 public interface BeanDefinitionRegistry {
 
-    void registerBeanDefinition(String name, BeanDefinition beanDefinition);
+    void registerBeanDefinition(String beanName, BeanDefinition beanDefinition);
+
+    BeanDefinition getBeanDefinition(String beanName);
 
 }

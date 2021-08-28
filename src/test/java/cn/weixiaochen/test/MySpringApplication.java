@@ -12,11 +12,10 @@ public class MySpringApplication {
     public static void main(String[] args) {
         DefaultBeanFactory beanFactory = new DefaultBeanFactory();
 
-        BeanDefinition beanDefinition = new BeanDefinition(new IndexController());
+        BeanDefinition beanDefinition = new BeanDefinition(IndexController.class);
         beanFactory.registerBeanDefinition("indexController", beanDefinition);
 
         IndexController indexController = (IndexController) beanFactory.getBean("indexController");
         indexController.index();
     }
-
 }
