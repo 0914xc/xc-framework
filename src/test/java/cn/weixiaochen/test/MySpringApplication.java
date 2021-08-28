@@ -1,7 +1,6 @@
 package cn.weixiaochen.test;
 
-import cn.weixiaochen.spring.beans.factory.config.BeanDefinition;
-import cn.weixiaochen.spring.beans.factory.support.DefaultListableBeanFactory;
+import cn.weixiaochen.spring.context.annotation.AnnotationConfigApplicationContext;
 import cn.weixiaochen.test.controller.IndexController;
 
 /**
@@ -10,12 +9,8 @@ import cn.weixiaochen.test.controller.IndexController;
 public class MySpringApplication {
 
     public static void main(String[] args) {
-        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
-
-        BeanDefinition beanDefinition = new BeanDefinition(IndexController.class);
-        beanFactory.registerBeanDefinition("indexController", beanDefinition);
-
-        IndexController indexController = (IndexController) beanFactory.getBean("indexController");
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(IndexController.class);
+        IndexController indexController = (IndexController) applicationContext.getBean("indexController");
         indexController.index();
     }
 }

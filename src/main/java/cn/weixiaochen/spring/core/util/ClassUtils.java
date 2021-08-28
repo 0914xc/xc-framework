@@ -5,6 +5,8 @@ package cn.weixiaochen.spring.core.util;
  */
 public class ClassUtils {
 
+    private static final String PACKAGE_SEPARATOR = ".";
+
     public static ClassLoader getDefaultClassLoader() {
         return ClassUtils.class.getClassLoader();
     }
@@ -15,5 +17,11 @@ public class ClassUtils {
         } catch (ClassNotFoundException e) {
             throw e;
         }
+    }
+
+    public static String getShortName(String beanClassName) {
+        int lastIndexOfSeparator = beanClassName.lastIndexOf(PACKAGE_SEPARATOR);
+        return beanClassName.substring(lastIndexOfSeparator + 1).substring(0, 1).toLowerCase()
+                + beanClassName.substring(lastIndexOfSeparator + 2);
     }
 }
