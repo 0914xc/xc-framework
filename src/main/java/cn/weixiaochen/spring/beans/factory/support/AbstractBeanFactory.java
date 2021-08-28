@@ -1,7 +1,8 @@
 package cn.weixiaochen.spring.beans.factory.support;
 
-import cn.weixiaochen.spring.beans.factory.config.BeanDefinition;
 import cn.weixiaochen.spring.beans.factory.BeanFactory;
+import cn.weixiaochen.spring.beans.factory.ListableBeanFactory;
+import cn.weixiaochen.spring.beans.factory.config.BeanDefinition;
 import cn.weixiaochen.spring.beans.BeansException;
 
 /**
@@ -9,6 +10,7 @@ import cn.weixiaochen.spring.beans.BeansException;
  */
 public abstract class AbstractBeanFactory extends DefaultSingletonRegistry implements BeanFactory {
 
+    @Override
     public Object getBean(String name) throws BeansException {
         Object bean = getSingleton(name);
         if (bean == null) {
@@ -30,4 +32,5 @@ public abstract class AbstractBeanFactory extends DefaultSingletonRegistry imple
         registerSingleton(beanName, bean);
         return bean;
     }
+
 }

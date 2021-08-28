@@ -1,7 +1,7 @@
 package cn.weixiaochen.spring.beans.factory.config;
 
 import cn.weixiaochen.spring.beans.BeansException;
-import cn.weixiaochen.spring.beans.util.ClassUtils;
+import cn.weixiaochen.spring.core.util.ClassUtils;
 
 /**
  * @author 魏小宸 2021/8/24

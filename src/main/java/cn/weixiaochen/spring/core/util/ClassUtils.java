@@ -1,4 +1,4 @@
-package cn.weixiaochen.spring.beans.util;
+package cn.weixiaochen.spring.core.util;
 
 /**
  * @author 魏小宸 2021/8/28
