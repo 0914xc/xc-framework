@@ -5,7 +5,11 @@ package cn.weixiaochen.spring.core.util;
  */
 public class ClassUtils {
 
-    private static final String PACKAGE_SEPARATOR = ".";
+    public static final String PATH_SEPARATOR = "/";
+
+    public static final String PACKAGE_SEPARATOR = ".";
+
+    public static final String CLASS_FILE_SUFFIX = ".class";
 
     public static ClassLoader getDefaultClassLoader() {
         return ClassUtils.class.getClassLoader();
@@ -21,7 +25,15 @@ public class ClassUtils {
 
     public static String getShortName(String beanClassName) {
         int lastIndexOfSeparator = beanClassName.lastIndexOf(PACKAGE_SEPARATOR);
-        return beanClassName.substring(lastIndexOfSeparator + 1).substring(0, 1).toLowerCase()
-                + beanClassName.substring(lastIndexOfSeparator + 2);
+        return beanClassName.substring(lastIndexOfSeparator + 1).substring(0, 1).toLowerCase() +
+                beanClassName.substring(lastIndexOfSeparator + 2);
+    }
+
+    public static String convertResourcePathToClassName(String resourcePath) {
+        return resourcePath.replace(PATH_SEPARATOR, PACKAGE_SEPARATOR);
+    }
+
+    public static String convertClassNameToResourcePath(String className) {
+        return className.replace(PACKAGE_SEPARATOR, PATH_SEPARATOR);
     }
 }
