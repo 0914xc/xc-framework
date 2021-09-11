@@ -1,6 +1,7 @@
 package cn.weixiaochen.test;
 
 import cn.weixiaochen.spring.context.annotation.AnnotationConfigApplicationContext;
+import cn.weixiaochen.test.config.AppConfig;
 import cn.weixiaochen.test.controller.IndexController;
 
 /**
@@ -9,7 +10,7 @@ import cn.weixiaochen.test.controller.IndexController;
 public class MySpringApplication {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(IndexController.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         IndexController indexController = (IndexController) applicationContext.getBean("indexController");
         indexController.index();
     }

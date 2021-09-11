@@ -1,17 +1,15 @@
 package cn.weixiaochen.spring.beans.factory.support;
 
 import cn.weixiaochen.spring.beans.BeansException;
-import cn.weixiaochen.spring.beans.factory.ListableBeanFactory;
 import cn.weixiaochen.spring.beans.factory.config.BeanDefinition;
+import cn.weixiaochen.spring.beans.factory.config.ConfigurableListableBeanFactory;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author 魏小宸 2021/8/24
  */
-public class DefaultListableBeanFactory extends AbstractBeanFactory implements BeanDefinitionRegistry, ListableBeanFactory {
+public class DefaultListableBeanFactory extends AbstractBeanFactory implements ConfigurableListableBeanFactory, BeanDefinitionRegistry {
 
     protected final Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
@@ -30,6 +28,12 @@ public class DefaultListableBeanFactory extends AbstractBeanFactory implements B
     }
 
     @Override
+    public boolean containsBeanDefinition(String beanName) {
+        return beanDefinitionMap.containsKey(beanName);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
     public <T> Map<String, T> getBeansOfType(Class<T> type) throws BeansException {
         Map<String, T> result = new HashMap<>();
         beanDefinitionMap.forEach(((beanName, beanDefinition) -> {
@@ -43,8 +47,18 @@ public class DefaultListableBeanFactory extends AbstractBeanFactory implements B
     }
 
     @Override
+    public String[] getBeanNamesForType(Class<?> type) {
+        return getBeansOfType(type).keySet().toArray(new String[0]);
+    }
+
+    @Override
     public String[] getBeanDefinitionNames() {
         Set<String> beanNames = beanDefinitionMap.keySet();
-        return beanNames.toArray(new String[beanNames.size()]);
+        return beanNames.toArray(new String[0]);
+    }
+
+    @Override
+    public void preInstantiateSingletons() throws BeansException {
+
     }
 }
